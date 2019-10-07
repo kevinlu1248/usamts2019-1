@@ -1,0 +1,69 @@
+%! Author = kevin
+%! Date = 2019-09-10
+
+% Preamble
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+% Packages
+\usepackage{amsmath}
+\usepackage{amsthm}
+%\usepackage{gensymb}
+
+% Custom functions
+\renewcommand{\thesection}{Section \arabic{section}\\ }
+\newtheorem{lemma}{Lemma}
+
+\title{USAMTS 2019 -2020 Set 1}
+\author{Kevin Lu}
+\date{September 2019}
+
+% Document
+\begin{document}
+
+    \maketitle
+
+    \section{}\label{sec:}
+
+    \section{}\label{sec:2}
+    \begin{lemma}[Particular Case of the Rearrangement Inequality]
+        If $a_1\geq a_2 \geq a_3$ and $b_1\leq b_2 \leq b_3$ then $a_1b_1+a_2b_2+a_3b_3\leq a_{1b}_2+a_2b_3+a_3b_1$ with equality iff ($a_1=a_2$ or $b_1=b_2$) and ($a_1=a_3$ or $b_2=b_3$).
+    \end{lemma}
+    \begin{proof}
+        The inequality case is trivialized by the rearrangement inequality but the equality case may require a bit more work. Since $(a_1-a_2)(b_1-b_2)\leq0 \implies a_1b_1+a_2b_2+a_3b_3\leq a_1b_2+a_2b_1+a_3b_3$ with equality when $a_1=a_2$ or $b_1=b_2$. Since $(a_1-a_3)(b_3-b_2)\geq0 \implies a_1b_2+a_2b_1+a_3b_3\leq a_1b_3+a_2b_1+a_3b_2$ with equality when $a_1=a_3$ or $b_2=b_3$. Thus, we have $a_1b_1+a_2b_2+a_3b_3\leq a_1b_2+a_2b_1+a_3b_3\leq a_1b_3+a_2b_1+a_3b_2$ with equality iff ($a_1=a_2$ or $b_1=b_2$) and ($a_1=a_3$ or $b_2=b_3$).
+    \end{proof}
+    Rearranging the given yields the following
+    \begin{align*}
+        \sqrt[y]{z}&=\sqrt[x]{x} \\
+        \sqrt[z]{x}&=\sqrt[y]{y} \\
+        \sqrt[x]{y}&=\sqrt[z]{z} \\
+    \end{align*}
+    Multiplying the three yields
+    \begin{equation}
+        \sqrt[z]{x}\sqrt[x]{y}\sqrt[y]{z}&=\sqrt[x]{x}\sqrt[y]{y}\sqrt[z]{z}
+    \end{equation}
+    WLOG let $x\geq y\geq z$. Lemma 1 with $\log{x}\geq\log{y}\geq\log{z}$ and $\frac{1}{x}\leq\frac{1}{y}\leq\frac{1}{z}$ yields
+    \begin{align*}
+        \frac{1}{x}\log{x}+\frac{1}{y}\log{y}+\frac{1}{z}\log{z}&\leq \frac{1}{z}\log{x}+\frac{1}{x}\log{y}+\frac{1}{y}\log{z}\\
+        log{(\sqrt[z]{x}\sqrt[x]{y}\sqrt[y]{z})}&\leq\log{(\sqrt[x]{x}\sqrt[y]{y}\sqrt[z]{z})} \\
+        \sqrt[z]{x}\sqrt[x]{y}\sqrt[y]{z}&\leq\sqrt[x]{x}\sqrt[y]{y}\sqrt[z]{z}
+    \end{align*}
+    with equality iff $\frac{1}{x}=\frac{1}{y}$ or $\log{x}=\log{y}$ (ignoring the second requirement of the "and" since the first is sufficient), either of which implies $x=y$. Since $x^y=z^x$ and $x,y,z\geq1$, this implies $x^x=z^x\implies x=z\implies x=y=z$, as required.
+
+    \section{}\label{sec:3}
+    Let $[X_1X_2\cdots X_n]$ be the area of n-gon $X_1X_2\cdots X_n$. Let O be the center of $\omega$ and X and Y the respective projections of O and P on line $\overline{IE}$. Since $[EOI]=\frac{EI\cdot OX}{2}$, $[EPI]=\frac{EI\cdot PY}{2}$ and $UOE\sim UPY$ by AA with angles $\angle OXU=90^\circ =\angle UPY$ and $\angle OUE=\angle PUY$,
+    \begin{equation}
+        \frac{[EOI]}{[EPI]}=\frac{OX}{PY}=\frac{UO}{UP}=\frac{1}{2} \implies [EOI]=\frac{[EPI]}{2}.
+    \end{equation}
+    Let $\theta=\angle EOU$ and $r=1/2$ be the radius of $\omega$. We have
+    \begin{equation}
+        [EOI]=\frac{EI\cdot OX}{2}=EX\cdot OX=r\sin{\theta}\cdot r\cos{\theta}=\frac{r^2\sin{2\theta}}{2}=\frac{\sin{2\theta}}{8}
+    \end{equation}
+    Since $\sin{2\theta}\leq 1$ with equality when $2\theta=90^\circ\implies \theta=45^\circ$, we have $[EPI]=2[EOI]\leq \frac{1}{4}$, with equality when $\angle EOI=45^\circ$.
+    \section{}\label{sec:4}
+
+    \section{}\label{sec:5}
+
+
+\end{document}
